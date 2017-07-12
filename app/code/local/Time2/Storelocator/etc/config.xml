@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * System Configuration file
+ * @author     Time2 Digital
+ */
+-->
+<config>
+    <modules>
+        <Time2_Storelocator>
+            <version>1.0.0</version>
+        </Time2_Storelocator>
+    </modules>
+    
+    <global>
+         <models>
+            <time2_storelocator>
+                <class>Time2_Storelocator_Model</class>
+                <resourceModel>storelocator_resource</resourceModel>
+            </time2_storelocator>
+            <storelocator_resource>
+                <class>Time2_Storelocator_Model_Resource</class>
+                <entities>
+                    <storelocator>
+                        <table>time2_storelocator</table>
+                    </storelocator>
+                    <storelocator_store>
+                        <table>time2_storelocator_store</table>
+                    </storelocator_store>
+                </entities>
+            </storelocator_resource>
+        </models>
+        
+        <helpers>
+            <time2_storelocator>
+                <class>Time2_Storelocator_Helper</class>
+            </time2_storelocator>
+        </helpers>
+        
+        <blocks>
+            <time2_storelocator>
+                <class>Time2_Storelocator_Block</class>
+            </time2_storelocator>
+        </blocks>
+        
+        <resources>
+            <time2_storelocator_setup>
+                <setup>
+                    <module>Time2_Storelocator</module>
+                    <class>Time2_Storelocator_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </time2_storelocator_setup>
+            
+            <time2_storelocator_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </time2_storelocator_write>
+            
+            <time2_storelocator_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </time2_storelocator_read>
+        </resources>
+        
+    </global>
+    
+    <frontend>
+        <routers>
+            <time2_storelocator>
+                <use>standard</use>
+                <args>
+                    <module>Time2_Storelocator</module>
+                    <frontName>storelocator</frontName>
+                </args>
+            </time2_storelocator>
+        </routers>
+
+        <layout>
+            <updates>
+                <time2_storelocator>
+                    <file>time2_storelocator.xml</file>
+                </time2_storelocator>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Time2_Storelocator after="Mage_Adminhtml">Time2_Storelocator_Adminhtml</Time2_Storelocator>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    
+    
+    <adminhtml>
+        <acl>
+           <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+               <admin>
+                   <children>
+                       <system>
+                           <children>
+                               <config>
+                                   <children>
+                                       <time2_storelocator_setting translate="title" module="time2_storelocator">
+                                           <title>StoreLocator Settings</title>
+                                       </time2_storelocator_setting>
+                                   </children>
+                               </config>
+                           </children>
+                       </system>
+                   </children>
+               </admin>
+           </resources>
+        </acl>
+
+        <layout>
+            <updates>
+                <time2_storelocator>
+                    <file>time2_storelocator.xml</file>
+                </time2_storelocator>
+            </updates>
+        </layout>
+        
+    </adminhtml>
+    
+    <default>
+        <time2_storelocator_setting>
+            <time2_storelocator_status>
+                <enable>1</enable>
+            </time2_storelocator_status>
+            
+            <time2_storelocator_display_setting>
+                <stores_per_page>8</stores_per_page>
+            </time2_storelocator_display_setting>
+        </time2_storelocator_setting>
+    </default> 
+</config>

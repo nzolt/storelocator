@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author     Time2 Digital
+ */
+-->
+<config>
+     <menu>
+        <time2_storelocator translate="title" module="time2_storelocator">
+        <title>Store Locator</title>
+        <sort_order>100</sort_order>
+            <children>
+                <time2_storelocator_settings translate="title" module="time2_storelocator">
+                    <title>Settings</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/system_config/edit/section/time2_storelocator_setting</action>
+                </time2_storelocator_settings>
+                <time2_manage_storelocator translate="title" module="time2_storelocator">
+                    <title>Manage Stores locations</title>
+                    <sort_order>2</sort_order>
+                     <action>adminhtml/managestorelocator</action>
+                </time2_manage_storelocator>
+            </children>
+        </time2_storelocator>
+    </menu>
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <time2_storelocator translate="title" module="time2_storelocator">
+                        <title>Storelocator</title>
+                        <sort_order>100</sort_order>
+                        <children>
+                            <time2_manage_storelocator translate="title" module="time2_storelocator">
+                                <title>Storelocations</title>
+                                <sort_order>1</sort_order>
+                                <children>
+                                    <save translate="title" module="time2_storelocator">
+                                        <title>Save Store</title>
+                                        <sort_order>0</sort_order> 
+                                    </save>
+                                    <delete translate="title" module="time2_storelocator">
+                                        <title>Delete Store</title>
+                                        <sort_order>1</sort_order> 
+                                    </delete>
+                                </children>
+                            </time2_manage_storelocator>
+                            <time2_storelocator_settings translate="title" module="time2_storelocator">
+                                <title>Settings</title>
+                                <sort_order>2</sort_order>
+                            </time2_storelocator_settings>
+                        </children>
+                    </time2_storelocator>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
