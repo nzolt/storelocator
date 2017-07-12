@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module configuration file
+ * @author      Time2 Digital
+ */
+-->
+<config>
+    <modules>
+        <Time2_Storelocator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Time2_Storelocator>
+    </modules>
+</config>
