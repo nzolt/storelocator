@@ -10,6 +10,9 @@
         <Time2_Storelocator>
             <active>true</active>
             <codePool>local</codePool>
+            <depends>
+                <Base_Core />
+            </depends>
         </Time2_Storelocator>
     </modules>
 </config>
