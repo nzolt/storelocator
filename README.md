@@ -1,0 +1,2 @@
+# storelocator
+Storelocator Magento module
